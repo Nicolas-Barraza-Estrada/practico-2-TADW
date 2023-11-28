@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+// En el controlador InteraccionController.php
+
 use App\Models\Interaccion;
+use App\Models\Perro;
+use Illuminate\Http\Request;
 
 class InteraccionController extends Controller
 {
@@ -15,9 +18,31 @@ class InteraccionController extends Controller
             'preferencia' => 'required|in:aceptado,rechazado',
         ]);
 
-        Interaccion::create($request->all());
+        // Crear la interacción
+        $interaccion = Interaccion::create($request->all());
 
-        return response()->json(['message' => 'Preferencia guardada correctamente']);
+        // Verificar si hay un match
+        $hayMatch = $this->verificarMatch($interaccion);
+
+        if ($hayMatch) {
+            return response()->json(['message' => '¡Hay match!']);
+        }
+
+        return response()->json(['message' => 'OK']);
+    }
+
+    private function verificarMatch($interaccion)
+    {
+        // Obtener información sobre la interacción
+        $perroInteresadoId = $interaccion->perro_interesado_id;
+        $perroCandidatoId = $interaccion->perro_candidato_id;
+        $preferencia = $interaccion->preferencia;
+
+        // Verificar si la interacción es mutua (match)
+        $interaccionMutua = Interaccion::where('perro_interesado_id', $perroCandidatoId)
+            ->where('perro_candidato_id', $perroInteresadoId)
+            ->exists();
+
+        return $interaccionMutua;
     }
 }
-

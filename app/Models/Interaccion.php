@@ -11,8 +11,6 @@ class Interaccion extends Model
     protected $table = 'interaccions';
     protected $fillable = ['perro_interesado_id', 'perro_candidato_id', 'preferencia'];
 
-    // No deberías tener la función up() en el modelo. Esa función pertenece a las migraciones.
-
     public function perroInteresado()
     {
         return $this->belongsTo(Perro::class, 'perro_interesado_id');
