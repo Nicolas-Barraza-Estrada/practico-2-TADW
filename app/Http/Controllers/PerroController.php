@@ -62,4 +62,19 @@ class PerroController extends Controller
 
         return response()->json(['message' => 'Perro eliminado correctamente']);
     }
+    public function getPerroRandom()
+    {
+        $perroRandom = Perro::inRandomOrder()->first(['id', 'nombre']);
+
+        return response()->json($perroRandom);
+    }
+    public function getPerrosCandidatos($perroIdInteresado)
+    {
+        // Obtener todos los perros excepto el perro interesado
+        $perrosCandidatos = Perro::where('id', '!=', $perroIdInteresado)->get(['id','nombre','descripcion','foto_url']);
+
+        return response()->json($perrosCandidatos);
+    }
+
+
 }

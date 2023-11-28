@@ -3,6 +3,8 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PerroController;
+use App\Http\Controllers\InteraccionController;
+
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
@@ -21,3 +23,13 @@ Route::post('actualizarPerro/{perro}', [PerroController::class, 'update']);
 
 // Eliminar un perro (soft delete)
 Route::get('eliminarPerro/{perro}', [PerroController::class, 'destroy']);
+
+// Obtener un perro random
+Route::get('perroRandom', [PerroController::class, 'getPerroRandom']);
+
+// Obtener perros candidatos
+Route::get('perrosCandidatos/{perroIdInteresado}', [PerroController::class, 'getPerrosCandidatos']);
+
+// Guardar preferencias
+Route::post('guardarPreferencias', [InteraccionController::class, 'guardarPreferencias']);
+
