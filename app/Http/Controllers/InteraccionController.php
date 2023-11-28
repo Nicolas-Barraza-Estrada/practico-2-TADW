@@ -24,7 +24,7 @@ class InteraccionController extends Controller
         // Verificar si hay un match
         $hayMatch = $this->verificarMatch($interaccion);
 
-        if (!$hayMatch) {
+        if ($hayMatch) {
             return response()->json(['message' => '¡Hay match!']);
         }else{
             return response()->json(['message' => 'OK']);

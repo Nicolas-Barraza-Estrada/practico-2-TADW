@@ -33,3 +33,6 @@ Route::get('perrosCandidatos/{perroIdInteresado}', [PerroController::class, 'get
 // Guardar preferencias
 Route::post('guardarPreferencias', [InteraccionController::class, 'guardarPreferencias']);
 
+//Ver los aceptados/rechazados de un perro por su id
+Route::get('/perrosAceptados/{id}', [PerroController::class, 'getPerrosAceptados']);
+Route::get('/perrosrechazados/{id}', [PerroController::class, 'getPerrosRechazados']);

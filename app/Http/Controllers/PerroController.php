@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Perro;
 use Illuminate\Http\Request;
-
+use App\Models\Interaccion;
 class PerroController extends Controller
 {
     public function index()
@@ -77,6 +77,31 @@ class PerroController extends Controller
 
     return response()->json($perroCandidato);
 }
+    public function getPerrosAceptados($idPerroInteresado)
+    {
+        $perrosRechazados = Interaccion::where('perro_interesado_id', $idPerroInteresado)
+        ->where('preferencia', 'aceptado')
+        ->with(['perroCandidato' => function ($query) {
+            $query->select('id', 'nombre', 'foto_url', 'descripcion');
+        }])
+        ->get(['perro_candidato_id']);
+
+    return response()->json($perrosRechazados);
+    }
+
+
+    public function getPerrosRechazados($idPerroInteresado)
+{
+    $perrosRechazados = Interaccion::where('perro_interesado_id', $idPerroInteresado)
+        ->where('preferencia', 'rechazado')
+        ->with(['perroCandidato' => function ($query) {
+            $query->select('id', 'nombre', 'foto_url', 'descripcion');
+        }])
+        ->get(['perro_candidato_id']);
+
+    return response()->json($perrosRechazados);
+}
+
 
 
 
