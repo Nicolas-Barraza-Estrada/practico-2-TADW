@@ -1,0 +1,289 @@
+{
+	"info": {
+		"_postman_id": "e7e7df13-c96e-421d-ba74-62037d84d84f",
+		"name": "Practica2-TADW(NicolasBarraza)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30675173"
+	},
+	"item": [
+		{
+			"name": "http://127.0.0.1:8000/api/todosLosPerros",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/todosLosPerros",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"todosLosPerros"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8000/api/registrarPerro?nombre=asdada&foto_url=https://images.dog.ceo/breeds/terrier-norwich/n02094258_3610.jpg&descripcion=adadda",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/registrarPerro?nombre=asdada&foto_url=https://images.dog.ceo/breeds/terrier-norwich/n02094258_3610.jpg&descripcion=adadda",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"registrarPerro"
+					],
+					"query": [
+						{
+							"key": "nombre",
+							"value": "asdada"
+						},
+						{
+							"key": "foto_url",
+							"value": "https://images.dog.ceo/breeds/terrier-norwich/n02094258_3610.jpg"
+						},
+						{
+							"key": "descripcion",
+							"value": "adadda"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8000/api/verPerro/1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/verPerro/1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"verPerro",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8000/api/actualizarPerro/2?nombre=actualizao&foto_url=https://images.dog.ceo/breeds/terrier-norwich/n02094258_3610.jpg&descripcion=roooo",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/actualizarPerro/2?nombre=actualizao&foto_url=https://images.dog.ceo/breeds/terrier-norwich/n02094258_3610.jpg&descripcion=roooo",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"actualizarPerro",
+						"2"
+					],
+					"query": [
+						{
+							"key": "nombre",
+							"value": "actualizao"
+						},
+						{
+							"key": "foto_url",
+							"value": "https://images.dog.ceo/breeds/terrier-norwich/n02094258_3610.jpg"
+						},
+						{
+							"key": "descripcion",
+							"value": "roooo"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8000/api/eliminarPerro/2",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/eliminarPerro/2",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"eliminarPerro",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8000/api/perroRandom",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/perroRandom",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"perroRandom"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8000/api/perrosCandidatos/9",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/perrosCandidatos/9",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"perrosCandidatos",
+						"9"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8000/api/guardarPreferencias/?perro_interesado_id=6&perro_candidato_id=3&preferencia=aceptado",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/guardarPreferencias/?perro_interesado_id=6&perro_candidato_id=3&preferencia=aceptado",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"guardarPreferencias",
+						""
+					],
+					"query": [
+						{
+							"key": "perro_interesado_id",
+							"value": "6"
+						},
+						{
+							"key": "perro_candidato_id",
+							"value": "3"
+						},
+						{
+							"key": "preferencia",
+							"value": "aceptado"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8000/api/perrosAceptados/10",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/perrosAceptados/10",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"perrosAceptados",
+						"10"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8000/api/perrosrechazados/10",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/perrosrechazados/10",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"perrosrechazados",
+						"10"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
