@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Interaccion extends Model
 {
     use HasFactory;
+    protected $table = 'interaccions';
     protected $fillable = ['perro_interesado_id', 'perro_candidato_id', 'preferencia'];
 
     // No deberías tener la función up() en el modelo. Esa función pertenece a las migraciones.

@@ -69,12 +69,15 @@ class PerroController extends Controller
         return response()->json($perroRandom);
     }
     public function getPerrosCandidatos($perroIdInteresado)
-    {
-        // Obtener todos los perros excepto el perro interesado
-        $perrosCandidatos = Perro::where('id', '!=', $perroIdInteresado)->get(['id','nombre','descripcion','foto_url']);
+{
+    // Obtener un perro candidato aleatorio que no sea el perro interesado
+    $perroCandidato = Perro::where('id', '!=', $perroIdInteresado)
+                            ->inRandomOrder()
+                            ->first(['id', 'nombre','descripcion', 'foto_url' ]);
 
-        return response()->json($perrosCandidatos);
-    }
+    return response()->json($perroCandidato);
+}
+
 
 
 }

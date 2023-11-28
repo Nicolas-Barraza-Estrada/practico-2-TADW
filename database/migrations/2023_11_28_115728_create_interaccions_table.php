@@ -11,10 +11,9 @@ return new class extends Migration
      *
      * @return void
      */
-    // en el archivo de migración de Interaccion
     public function up()
     {
-        Schema::create('interacciones', function (Blueprint $table) {
+        Schema::create('interaccions', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('perro_interesado_id');
             $table->unsignedBigInteger('perro_candidato_id');
