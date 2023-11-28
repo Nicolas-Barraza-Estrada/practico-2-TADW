@@ -1,4 +1,4 @@
 - Nombre: Nicolas Barraza EStrada
-- Carrera Ingenieria Civil en Informatica
+- Carrera: Ingenieria Civil en Informatica
 - GRUPO 3
 - Colección de postman: Practica2-TADW(NicolasBarraza).postman_collection.json
